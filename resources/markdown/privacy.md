@@ -59,7 +59,7 @@ Passwords are never stored in plain text.
 
 We keep your data only for as long as your account exists.
 
-If you delete your account, all associated personal data and poo logs are permanently deleted from our systems within a
+If you delete your account, all associated personal data is  permanently deleted from our systems within a
 reasonable time.
 
 ---
