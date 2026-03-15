@@ -53,6 +53,9 @@ new class extends Component {
                 required
                 autocomplete="current-password"
             />
+
+            <x-password-requirements/>
+
             <flux:input
                 wire:model="password"
                 :label="__('New password')"

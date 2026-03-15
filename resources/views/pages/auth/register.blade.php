@@ -30,6 +30,8 @@
                 placeholder="email@example.com"
             />
 
+            <x-password-requirements/>
+
             <!-- Password -->
             <flux:input
                 name="password"
