@@ -26,6 +26,9 @@ class AppServiceProvider extends ServiceProvider
         $this->configureDefaults();
     }
 
+    /**
+     * Configure default behaviors for production-ready applications.
+     */
     protected function configureDefaults(): void
     {
         Date::use(CarbonImmutable::class);
@@ -35,9 +38,9 @@ class AppServiceProvider extends ServiceProvider
         );
 
         Password::defaults(fn (): ?Password => app()->isProduction()
-            ? Password::min(10)
-                ->numbers()
-            : null
+            ? Password::min(12)
+                ->mixedCase()
+            : null,
         );
     }
 }

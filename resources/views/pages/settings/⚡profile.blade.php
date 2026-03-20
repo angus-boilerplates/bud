@@ -1,15 +1,14 @@
 <?php
 
 use App\Concerns\ProfileValidationRules;
-use App\Models\User;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Validation\Rule;
 use Livewire\Attributes\Computed;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
-new class extends Component {
+new #[Title('Profile settings')] class extends Component {
     use ProfileValidationRules;
 
     public string $name = '';
@@ -79,7 +78,7 @@ new class extends Component {
 <section class="w-full">
     @include('partials.settings-heading')
 
-    <flux:heading class="sr-only">{{ __('Profile Settings') }}</flux:heading>
+    <flux:heading class="sr-only">{{ __('Profile settings') }}</flux:heading>
 
     <x-pages::settings.layout :heading="__('Profile')" :subheading="__('Update your name and email address')">
         <form wire:submit="updateProfileInformation" class="my-6 w-full space-y-6">

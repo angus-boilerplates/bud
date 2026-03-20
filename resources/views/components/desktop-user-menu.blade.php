@@ -1,6 +1,6 @@
 <flux:dropdown position="bottom" align="start">
     <flux:sidebar.profile
-        {{ $attributes->only('name') }}
+        :name="auth()->user()->name"
         :initials="auth()->user()->initials()"
         icon:trailing="chevrons-up-down"
         data-test="sidebar-menu-button"
@@ -31,7 +31,7 @@
                     class="w-full cursor-pointer"
                     data-test="logout-button"
                 >
-                    {{ __('Log Out') }}
+                    {{ __('Log out') }}
                 </flux:menu.item>
             </form>
         </flux:menu.radio.group>

@@ -1,0 +1,4 @@
+- frankenphp
+- Docker
+- MailJet configuration
+- 
