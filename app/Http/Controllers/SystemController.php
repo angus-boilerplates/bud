@@ -38,7 +38,7 @@ class SystemController extends Controller
         }
 
         // Otherwise, return a view
-        return view('public.system.info', compact('data'));
+        return view('pages.public.system.info', compact('data'));
     }
 
     /**

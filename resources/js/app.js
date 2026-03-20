@@ -1,5 +1,3 @@
-
-
 // Alpine Magic Clipboard
 
 document.addEventListener('alpine:init', () => {

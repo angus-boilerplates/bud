@@ -1,16 +1,21 @@
 {
     "agents": [
-        "copilot",
-        "claude_code"
+        "claude_code",
+        "copilot"
     ],
     "guidelines": true,
     "herd_mcp": true,
     "mcp": true,
+    "nightwatch_mcp": false,
+    "packages": [
+        "laravel/fortify"
+    ],
     "sail": false,
     "skills": [
         "fluxui-development",
         "livewire-development",
         "pest-testing",
-        "tailwindcss-development"
+        "tailwindcss-development",
+        "fortify-development"
     ]
 }

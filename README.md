@@ -7,7 +7,7 @@
 
 Bud is a boilerplate for Laravel...
 
-- Laravel 12
+- Laravel 13
 - Authentication
 - TailwindCSS v4
 - Livewire 4
