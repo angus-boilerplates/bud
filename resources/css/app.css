@@ -44,6 +44,14 @@
     @apply  !mb-0 !leading-tight;
 }
 
+
+/* Blur for Modal*/
+dialog[data-modal]::backdrop {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
 input:focus[data-flux-control],
 textarea:focus[data-flux-control],
 select:focus[data-flux-control] {
