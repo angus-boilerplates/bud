@@ -32,4 +32,5 @@ frankenphp-worker.php
 CLAUDE.md
 .github/copilot
 .github/copilot-instructions.md
-
+.github/skills
+AGENTS.md

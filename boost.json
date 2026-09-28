@@ -3,19 +3,21 @@
         "claude_code",
         "copilot"
     ],
+    "cloud": true,
     "guidelines": true,
     "herd_mcp": true,
     "mcp": true,
     "nightwatch_mcp": false,
-    "packages": [
-        "laravel/fortify"
-    ],
     "sail": false,
     "skills": [
+        "infer-conventions",
+        "deploying-to-cloud",
+        "fortify-development",
+        "laravel-best-practices",
+        "testing-best-practices",
+        "octane-development",
         "fluxui-development",
         "livewire-development",
-        "pest-testing",
-        "tailwindcss-development",
-        "fortify-development"
+        "tailwindcss-development"
     ]
 }
