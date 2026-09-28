@@ -19,5 +19,4 @@ Route::get('/info', [SystemController::class, 'info']);
 // Privacy Policy
 Route::get('/privacy-policy', [AboutController::class, 'privacyPolicy'])->name('privacy-policy');
 
-
 require __DIR__.'/settings.php';
