@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\URL;
 use Laravel\Fortify\Features;
 
 beforeEach(function () {
-    $this->skipUnlessFortifyFeature(Features::emailVerification());
+    $this->skipUnlessFortifyHas(Features::emailVerification());
 });
 
 test('email verification screen can be rendered', function () {
@@ -16,6 +16,14 @@ test('email verification screen can be rendered', function () {
     $response = $this->actingAs($user)->get(route('verification.notice'));
 
     $response->assertOk();
+});
+
+test('unverified users are redirected to the email verification prompt', function () {
+    $user = User::factory()->unverified()->create();
+
+    $response = $this->actingAs($user)->get(route('appearance.edit'));
+
+    $response->assertRedirect(route('verification.notice'));
 });
 
 test('email can be verified', function () {

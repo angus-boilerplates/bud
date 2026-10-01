@@ -6,10 +6,13 @@ use Laravel\Fortify\Features;
 use Livewire\Livewire;
 
 beforeEach(function () {
-    $this->skipUnlessFortifyFeature(Features::twoFactorAuthentication());
+    $this->skipUnlessFortifyHas(Features::twoFactorAuthentication());
 
     Features::twoFactorAuthentication([
         'confirm' => true,
+        'confirmPassword' => true,
+    ]);
+    Features::passkeys([
         'confirmPassword' => true,
     ]);
 });
@@ -17,12 +20,16 @@ beforeEach(function () {
 test('security settings page can be rendered', function () {
     $user = User::factory()->create();
 
-    $this->actingAs($user)
+    $response = $this->actingAs($user)
         ->withSession(['auth.password_confirmed_at' => time()])
-        ->get(route('security.edit'))
-        ->assertOk()
-        ->assertSee('Two-factor authentication')
-        ->assertSee('Enable 2FA');
+        ->get(route('security.edit'));
+
+    $response->assertOk();
+
+    $response->assertSee('Passkeys');
+    $response->assertSee('No passkeys yet');
+    $response->assertSee('Two-factor authentication');
+    $response->assertSee('Enable 2FA');
 });
 
 test('security settings page requires password confirmation when enabled', function () {
@@ -44,6 +51,8 @@ test('security settings page renders without two factor when feature is disabled
         ->get(route('security.edit'))
         ->assertOk()
         ->assertSee('Update password')
+        ->assertDontSee('Manage your passkeys for passwordless sign-in')
+        ->assertDontSee('Add a passkey to sign in without a password')
         ->assertDontSee('Two-factor authentication');
 });
 
