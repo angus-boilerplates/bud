@@ -37,6 +37,7 @@ yarn-error.log
 /boost.json
 /opencode.json
 /opencode.jsonc
+.github/skills
 
 **/caddy
 frankenphp
